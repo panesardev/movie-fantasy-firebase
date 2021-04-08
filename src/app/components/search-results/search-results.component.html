@@ -1,0 +1,18 @@
+<section *ngIf="movies$ | async as movies">
+	<div class="movies">
+		<p class="heading center">
+			Search results: {{ route.snapshot.paramMap.get('text') }}
+		</p>
+		<div class="movie" *ngFor="let movie of movies" routerLink="/view/movie/{{ movie.id }}">
+			<div>
+				<img [src]="IMG_URL + movie.poster_path">
+			</div>
+			<div>
+				<p class="title">{{ movie.title }}</p>
+				<div class="divider"></div>
+				<p>Release date: {{ movie.release_date }}</p>
+				<p>Popularity: {{ movie.popularity }}</p>
+			</div>
+		</div>
+	</div>
+</section>

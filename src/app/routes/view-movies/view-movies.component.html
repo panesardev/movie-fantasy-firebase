@@ -1,0 +1,14 @@
+<section *ngIf="movies$ | async as movies">
+	<p class="heading center">{{ type }}</p>
+	<div class="movies">
+		<div *ngFor="let movie of movies" routerLink="/view/movie/{{ movie.id }}" class="movie">
+			<div>
+				<img [src]="env.API_IMG_URL + movie.backdrop_path">
+				<img [src]="env.API_IMG_URL + movie.poster_path">
+			</div>
+			<div class="down">
+				<p>{{ movie.title }}</p>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,43 @@
+.fadeInUp { animation: fadeInUp 300ms ease; }
+.fadeIn { animation: fadeIn 300ms ease; }
+.zoomOut { animation: zoomOut 500ms ease; }
+
+@keyframes fadeIn {
+	from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0,40px,0)
+  }
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1
+  }
+}
+
+@keyframes zoomOut {
+	from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}

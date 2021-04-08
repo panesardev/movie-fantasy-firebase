@@ -1,0 +1,26 @@
+<section>
+	<div *ngIf="trending$ | async as trending" class="list">
+		<p class="heading">Trending</p>
+		<app-home-movie-list [movies]="trending" type="trending"></app-home-movie-list>
+	</div>
+	
+	<div *ngIf="upcoming$ | async as upcoming" class="list">
+		<p class="heading">Upcoming</p>
+		<app-home-movie-list [movies]="upcoming" type="upcoming"></app-home-movie-list>
+	</div>
+	
+	<div *ngIf="recommended$ | async as recommended" class="list">
+		<div *ngIf="user; else noUser">
+			<p class="heading">Recommended for you, ({{ userType }})</p>
+			<app-home-movie-list [movies]="recommended" type="recommended"></app-home-movie-list>
+		</div>
+		<ng-template #noUser>
+			<p class="info"><a routerLink="/auth/login">Login</a> to view recommeded movies</p>
+		</ng-template>
+	</div>
+	
+	<div *ngIf="popular$ | async as popular" class="list">
+		<p class="heading">Popular</p>
+		<app-home-movie-list [movies]="popular" type="popular"></app-home-movie-list>
+	</div>
+</section>

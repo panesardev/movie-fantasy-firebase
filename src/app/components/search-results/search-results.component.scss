@@ -1,0 +1,49 @@
+@import '../../../scss/variables.scss';
+
+.movies {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.heading {
+	margin-bottom: 1.5rem;
+}
+
+.title {
+	color: $primary;
+	font-size: 1.5rem;
+}
+
+img {
+	height: 185px;
+	border-radius: $radius;
+	width: auto;
+}
+
+.movie {
+	border-radius: $radius;
+	background-color: $navbar-bg;
+	display: flex;
+	height: 200px;
+	box-shadow: $shadow;
+	margin-bottom: 1rem;
+	padding: .5rem .8rem;
+	transition: transform 200ms ease;
+
+	&:hover {
+		transform: scale(1.05);
+		cursor: pointer;
+	}
+
+	div.divider {
+		margin: .5rem auto;
+	}
+
+	div:nth-child(2) {
+		flex: 1;
+		padding-left: 1rem;
+	}
+}

@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import './scss/variables.scss';
+@import './scss/animations.scss';
+@import './scss/theme.scss';
+
+html {
+  overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $bg;
+	color: $text;
+}
+
+* {
+	outline: none;
+	font-family: 'nunito sans';
+	box-sizing: border-box;
+}
+
+p, h1, h2 {
+	margin: 0;
+}
+
+// SCROLL BAR -----------------------------------
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+	background: $primary; 
+}
+::-webkit-scrollbar-thumb:hover {
+	background: $primary-hover; 
+}
+// -----------------------------------------------

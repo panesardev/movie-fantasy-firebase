@@ -1,0 +1,48 @@
+<section *ngIf="movie$ | async as movie">
+	<div class="grid">
+		<div>
+			<img [src]="env.API_IMG_URL + movie.poster_path" alt="poster" height="300">
+		</div>
+		<div>
+			<p class="heading">{{ movie.title }}</p>
+			<div class="divider"></div>
+			<p class="my-2">{{ movie.overview }}</p>
+	
+			<div class="my-2">
+				<p *ngFor="let genre of movie.genres" class="genre">{{ genre.name }}</p>
+			</div>
+			
+			<div class="my-2">
+				<a target="_blank" href="https://www.imdb.com/title/{{ movie.imdb_id }}/?ref_=fn_al_tt_1">View on IMDb</a>
+			</div>
+	
+			<table>
+				<tr *ngIf="movie.homepage">
+					<td>Website</td>
+					<td><a [href]="movie.homepage" target="_blank">homepage</a></td>
+				</tr>
+				<tr *ngIf="movie.release_date">
+					<td>Release Date</td>
+					<td>{{ movie.release_date }}</td>
+				</tr>
+				<tr *ngIf="movie.vote_average">
+					<td>Rating</td>
+					<td>{{ movie.vote_average }}/10</td>
+				</tr>
+				<tr *ngIf="movie.original_language">
+					<td>Language</td>
+					<td> <span *ngFor="let item of movie.spoken_languages">{{ item.name }} </span></td>
+				</tr>
+				<tr *ngIf="movie.budget">
+					<td>Budget</td>
+					<td>${{ convert(movie.budget) }}</td>
+				</tr>
+				<tr *ngIf="movie.runtime">
+					<td>Runtime</td>
+					<td>{{ movie.runtime }} minutes</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- <div class="bg" [ngStyle]="{'background-image': 'url(' + env.API_IMG_URL + movie.backdrop_path + ')'}"></div> -->
+</section>

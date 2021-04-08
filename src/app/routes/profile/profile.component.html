@@ -1,0 +1,12 @@
+<section *ngIf="user">
+	<div>
+		<p class="name">Hello {{ user.displayName }}</p>
+		<p class="info">You can change your preference here</p>
+		<div class="selection">
+			<select [(ngModel)]="selectedGenre" name="genres">
+				<option *ngFor="let genre of genres" [ngValue]="genre.id">{{ genre.name }}</option>
+			</select> <br>
+			<button class="primary-btn" (click)="update()">Update Preference</button>
+		</div>
+	</div>
+</section>

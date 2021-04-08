@@ -1,0 +1,43 @@
+@import '../../../scss/variables.scss';
+
+form {
+	max-width: 300px;
+	width: 100%;
+	margin: 1rem auto;
+
+	h1 {
+		color: $accent;
+	}
+
+	div {
+		margin: .8rem auto;
+	}
+
+	input, button, select {
+		width: 100%;
+	}
+
+	input, select {
+		margin-top: .5rem;
+	}
+
+	button {
+		margin-top: 1rem;
+		padding: .5rem .8rem;
+	}
+
+	.divider {
+		margin-top: 2rem;
+	}
+
+	.google-btn {
+		background-color: $navbar-bg;
+		color: $text;
+		// font-size: 1.1rem;
+
+		img {
+			vertical-align: middle;
+			width: 25px;
+		}
+	}
+}

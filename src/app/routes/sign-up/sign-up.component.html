@@ -1,0 +1,35 @@
+<section>
+	<form (ngSubmit)="signUp()" ngNativeValidate>
+		<h1>Sign Up for an Account</h1>
+		<div *ngIf="error">
+			<p class="error">{{ error }}</p>
+		</div>
+		<div>
+			<label>Enter full name</label> <br>
+			<input type="text" [(ngModel)]="user.displayName" name="name" placeholder="full name" autocomplete="off">
+		</div>
+		<div>
+			<label>Enter email</label> <br>
+			<input type="email" [(ngModel)]="user.email" name="email" placeholder="email" autocomplete="off">
+		</div>
+		<div>
+			<label>Enter password</label> <br>
+			<input type="password" [(ngModel)]="user.password" name="password" placeholder="password">
+		</div>
+		<div>
+			<label>Select your preference</label> <br>
+			<select [(ngModel)]="selectedGenre" name="genres">
+				<option *ngFor="let genre of genres" [ngValue]="genre.id">{{ genre.name }}</option>
+			</select>
+		</div>
+		<div>
+			<button type="submit" class="primary-btn">Sign up</button>
+		</div>
+		<div class="divider"></div>
+		<div>
+			<button type="button" class="google-btn" (click)="googleLogin()">
+				<img src="assets/img/google.svg">&nbsp;&nbsp;&nbsp;Continue with Google
+			</button>
+		</div>
+	</form>
+</section>

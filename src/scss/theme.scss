@@ -1,0 +1,106 @@
+@import './variables.scss';
+
+.center { text-align: center; }
+
+.heading {
+  color: $accent;
+  font-size: 2rem;
+}
+
+section {
+  padding: 1.5rem 3rem 3rem 3rem;
+  animation: fadeInLeft 300ms ease;
+}
+
+button, a, input, select {
+	border: 2px solid transparent;
+	font-size: 1rem;
+	border-radius: $radius;
+}
+
+button, a {
+  transition: 300ms background-color ease;
+}
+
+button {
+	box-shadow: 0 0 10px rgba(20, 20, 20, 0.678);
+  font-size: 1.1rem;
+}
+
+a {
+  color: $accent;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+input, select {
+  color: $text;
+  transition: 100ms border-bottom ease;
+  padding: .5rem .8rem;
+	box-shadow: 0 0 10px rgba(20, 20, 20, 0.678);
+	background-color: $navbar-bg;
+  &:focus {
+    border-bottom: 2px solid $accent;
+  }
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.452);
+  }
+}
+
+button:hover, a:hover {
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: $primary;
+  color: $bg;
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.accent-btn {
+  background-color: $accent;
+  color: $bg;
+  &:hover {
+    background-color: $accent-hover;
+  }
+}
+
+.accent-light-btn {
+  background-color: $accent-light;
+  color: $accent;
+  &:hover {
+    color: $light;
+    background-color: $accent-hover;
+  }
+}
+
+.red-btn {
+  background-color: $red;
+  color: $bg;
+  &:hover {
+    background-color: $red-hover;
+  }
+}
+
+p.error {
+  color: $red;
+  background-color: $red-bg;
+  padding: .5rem .8rem;
+  border-radius: $radius;
+}
+
+.divider {
+  border-bottom: 2px solid #575e68;
+}
+
+.float-right { float: right; }
+
+@media screen and (max-width: 825px) {
+  section {
+    padding: 1rem;
+  }
+}

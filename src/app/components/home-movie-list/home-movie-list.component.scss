@@ -1,0 +1,44 @@
+@import '../../../scss/variables.scss';
+
+.movies-container {
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	gap: 1rem;
+}
+
+.movie {
+	box-shadow: $shadow;
+	border-radius: $radius;
+	transition: 200ms transform ease;
+
+	&:hover {
+		transform: scale(1.15);
+	}
+	
+	img {
+		width: 100%;
+		height: auto;
+		border-radius: $radius;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.view-btn {
+	height: 100%;
+	width: 100%;
+	background-color: $navbar-bg;
+	color: $accent;
+	transition: 200ms transform ease;
+	&:hover {
+		transform: scale(1.15);
+	}
+}
+
+@media screen and (max-width: 825px) {
+	.movies-container {
+		grid-template-columns: repeat(3, 1fr);
+		gap: .5rem;
+	}	
+}

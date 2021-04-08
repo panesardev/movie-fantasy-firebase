@@ -1,0 +1,12 @@
+<div class="movies-container">
+	<div *ngFor="let movie of movies">
+		<div class="movie">
+			<img loading="lazy" routerLink="/view/movie/{{ movie.id }}" [src]="env.API_IMG_URL + movie.poster_path">
+		</div>
+	</div>
+	<div>
+		<a routerLink="/view/movies/{{ type }}">
+			<button class="view-btn">View more</button>
+		</a>
+	</div>
+</div>

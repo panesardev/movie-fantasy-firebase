@@ -1,0 +1,20 @@
+@import '../../../scss/variables.scss';
+
+section {
+  text-align: center;
+}
+
+.name {
+  color: $primary;
+  font-size: 3rem;
+}
+
+button {
+  padding: .5rem .8rem;
+  margin-top: 1rem;
+}
+
+.info {
+  font-size: 1.5rem;
+  margin: 2rem;
+}

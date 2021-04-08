@@ -1,0 +1,25 @@
+<nav>
+	<div class="brand">
+		<a routerLink="/">MovieFantasy</a>
+	</div>
+	<div class="nav-button">
+		<button (click)="toggle()"><i class="fas fa-bars"></i></button>
+	</div>
+	<div class="nav" #nav>
+		<div *ngIf="user">
+			<a routerLink="/profile" (click)="toggle()">Profile</a>
+		</div>
+		<div *ngIf="user">
+			<a (click)="logout()" (click)="toggle()">Logout</a>
+		</div>
+		<div>
+			<a routerLink="/auth/login" (click)="toggle()">Login</a>
+		</div>
+		<div>
+			<a routerLink="/auth/sign-up" (click)="toggle()">Sign up</a>
+		</div>
+		<div class="search">
+			<app-searchbar (output)="toggle()"></app-searchbar>
+		</div>
+	</div>
+</nav>

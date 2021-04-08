@@ -1,0 +1,29 @@
+@import '../../../scss/variables.scss';
+
+.searchbar {
+	display: flex;
+	justify-content: space-between;
+}
+
+input:focus + button {
+	background-color: $accent-light;
+	color: $accent;
+}
+
+input {
+	background-color: $bg;
+	width: 100%;
+	box-shadow: none;
+	border-top-right-radius: unset;
+	border-bottom-right-radius: unset;
+  padding: .3rem .8rem;
+}
+
+button {
+	padding: 0 1rem;
+	box-shadow: none;
+	border-top-left-radius: unset;
+	border-bottom-left-radius: unset;
+	background-color: $bg;
+	color: $accent;
+}
